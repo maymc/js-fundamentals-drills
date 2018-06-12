@@ -79,7 +79,20 @@ var countAll = function(arr){
  * @param {Array}
  * @return {Array}
  */
-var countStrings;
+
+//Initialize array for lengths
+var lengths = [];
+var stringLength = 0;
+
+var countStrings = function(arr){
+  for(var i=0; i<arr.length; i++){
+    stringLength = arr[i].length;
+    //console.log(stringLength);
+    lengths.push(stringLength);
+    //console.log(lengths);
+  }
+  return lengths;
+}
 
 /* #countAllStrings
  *
@@ -397,7 +410,7 @@ module.exports = {
   stringCount: stringCount,
   arrayLength: arrayLength,
   countAll: countAll,
-  countStrings: null,
+  countStrings: countStrings,
   countAllStrings: null,
   convertToArray: null,
   objectSize: null,
