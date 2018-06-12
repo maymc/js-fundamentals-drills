@@ -449,7 +449,20 @@ var getKeys = function(obj){
  * @param {Object}
  * @return {Array}
  */
-var objectToArray;
+var objectToArray = function(obj){
+  var tuplesArray = [];
+
+  for(var key in obj){
+    //Push the key-value pair into the inner array, then push the inner array into the out array
+    var tuple = []; //Reset tuple array as an empty array for the next key-value pair
+    tuple.push(key);
+    tuple.push(obj[key]);
+    //console.log(tuple);
+    tuplesArray.push(tuple);
+    //console.log(tuplesArray);
+  }
+  return tuplesArray;
+}
 
 /* #arrayToObject
  *
@@ -580,7 +593,7 @@ module.exports = {
   strToKeys: strToKeys,
   getValues: getValues,
   getKeys: getKeys,
-  objectToArray: null,
+  objectToArray: objectToArray,
   arrayToObject: null,
   arraysToObject: null,
   objectsToTuples: null,
