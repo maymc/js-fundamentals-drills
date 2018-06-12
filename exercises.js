@@ -250,7 +250,15 @@ var moreThanTenLetters = function(arr){
  * @param {Array}
  * @return {Number}
  */
-var multiplyAll;
+
+var product = 1;
+
+var multiplyAll = function(arr){
+  for(var i=0; i<arr.length; i++){
+    product *= arr[i];
+  }
+  return product;
+}
 
 /* #sumAllPositive
  *
@@ -488,7 +496,7 @@ module.exports = {
   lengthOfLast: lengthOfLast,
   sumBelowTen: sumBelowTen,
   moreThanTenLetters: moreThanTenLetters,
-  multiplyAll: null,
+  multiplyAll: multiplyAll,
   sumAllPositive: null,
   stringCountBelowThree: null,
   countObjects: null,
