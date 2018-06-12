@@ -324,7 +324,14 @@ var getObjectKeys;
  * @param {Object}
  * @return {Array}
  */
-var getObjectValues;
+
+var getObjectValues = function(obj){
+  var propArray = [];
+  for(var prop in obj){
+    propArray.push(obj[prop]);
+  }
+  return propArray;
+}
 
 /* #makeObject
  *
@@ -522,7 +529,7 @@ module.exports = {
   stringCountBelowThree: stringCountBelowThree,
   countObjects: countObjects,
   getObjectKeys: null,
-  getObjectValues: null,
+  getObjectValues: getObjectValues,
   makeObject: null,
   makeObjectReverse: null,
   tupleToObject: null,
