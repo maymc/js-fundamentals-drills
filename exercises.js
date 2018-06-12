@@ -139,7 +139,16 @@ var convertToArray = function(obj){
  * @param {Object}
  * @return {Number}
  */
-var objectSize;
+var count = 0;
+
+var objectSize = function(obj){
+  //Loop through all the keys in the object
+  for(var key in obj){
+    count++; //This works because it will go through each kay so in each loop, the count will increase and it will stop when there are no more keys
+  }
+
+  return count;
+}
 
 /* #createZeroFilledArray
  *
@@ -452,7 +461,7 @@ module.exports = {
   countStrings: countStrings,
   countAllStrings: countAllStrings,
   convertToArray: convertToArray,
-  objectSize: null,
+  objectSize: objectSize,
   createZeroFilledArray: createZeroFilledArray,
   poppedArray: poppedArray,
   splitString: splitString,
