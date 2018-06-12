@@ -181,7 +181,11 @@ var splitString = function(str){
  * @param {String}
  * @return {Number}
  */
-var lengthOfLast;
+var lengthOfLast = function(str){
+  var arrLength = str.length;
+  var lastLength = str[arrLength - 1].length;
+  return lastLength;
+}
 
 /* #sumBelowTen
  *
@@ -443,7 +447,7 @@ module.exports = {
   createZeroFilledArray: createZeroFilledArray,
   poppedArray: poppedArray,
   splitString: splitString,
-  lengthOfLast: null,
+  lengthOfLast: lengthOfLast,
   sumBelowTen: null,
   moreThanTenLetters: null,
   multiplyAll: null,
