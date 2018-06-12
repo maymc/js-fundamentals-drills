@@ -233,7 +233,15 @@ var sumBelowTen = function(arr){
  * @param {String}
  * @return {Number}
  */
-var moreThanTenLetters;
+var moreThanTenLetters = function(arr){
+  var count = 0;
+  for(var i=0; i<arr.length; i++){
+    if(arr[i].length > 10){
+      count++;
+    }
+  }
+  return count;
+}
 
 /* #multiplyAll
  *
@@ -479,7 +487,7 @@ module.exports = {
   splitString: splitString,
   lengthOfLast: lengthOfLast,
   sumBelowTen: sumBelowTen,
-  moreThanTenLetters: null,
+  moreThanTenLetters: moreThanTenLetters,
   multiplyAll: null,
   sumAllPositive: null,
   stringCountBelowThree: null,
